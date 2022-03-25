@@ -1,0 +1,4 @@
+
+# Env file
+.env
+docker-compose.override.yml
