@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    command: rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - "3001:3000"
+    environment:
+      TZ: 'America/Toronto'
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    cap_add:
+      # Silence message: mbind: Operation not permitted
+      # https://github.com/docker-library/mysql/issues/422
+      # https://github.com/docker-library/mysql/issues/303
+      - SYS_NICE
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      TZ: 'America/Toronto'
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
