@@ -1,8 +1,14 @@
+git clone git@github.com:stephanpaquet/rails-tuto.git
+
+cd rails-tuto  
+
+git checkout main
+
 docker compose build
 
-docker compose run --no-deps web rails new . --force --mysql
+docker compose run --no-deps app rails new . --force --mysql
 
-<!-- sudo chown -R $USER:$USER . -->
+sudo chown -R $USER:$USER .
 
 docker compose build
 
@@ -45,6 +51,42 @@ test:
 
 ```
 
- docker compose up
+## dans le fichier Gemfile
 
- docker compose run web rake db:create
+remplacer 
+```
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
+```
+par 
+```
+# A simple, fast Mysql library for Ruby, binding to libmysql
+gem 'mysql2', '0.5.3' 
+```
+
+et jouter le dotenv-rails
+```
+# Loads environment variables from `.env`.
+gem 'dotenv-rails', '2.7.6'
+```
+
+
+
+docker compose run app bundle install
+
+docker compose build
+
+docker compose run app rake db:create
+
+docker compose up
+
+## Application 
+http://localhost:3000
+
+## PhpMyAdmin
+http://localhost:8080
+
+
+
+
+
