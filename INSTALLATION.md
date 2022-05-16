@@ -1,6 +1,6 @@
-git clone git@github.com:stephanpaquet/rails-tuto.git
+git clone git@github.com:stephanpaquet/docker-rails-mysql.git
 
-cd rails-tuto  
+cd docker-rails-mysql  
 
 git checkout main
 
