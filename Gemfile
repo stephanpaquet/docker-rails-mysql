@@ -45,6 +45,17 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# --------------------------------------------------------------------------------
+# FRONT --------------------------------------------------------------------------
+gem 'uglifier', '4.2.0' # Use Uglifier as compressor for JavaScript assets
+gem 'sass-rails', '6.0.0'
+gem "sassc-rails", '2.1.2'
+
+
+# --------------------------------------------------------------------------------
+# USERS --------------------------------------------------------------------------
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

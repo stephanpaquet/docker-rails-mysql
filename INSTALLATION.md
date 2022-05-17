@@ -89,4 +89,17 @@ http://localhost:8080
 
 
 
+```
+docker compose exec app ruby --version
+$ ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux]
+```
 
+```
+docker compose exec app rails --version
+$ Rails 7.0.3
+```
+
+## Lister les routes
+```
+docker compose exec app rails routes
+```
