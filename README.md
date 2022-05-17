@@ -30,7 +30,14 @@ rails db:migrate
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 ```
+## Association
+https://guides.rubyonrails.org/association_basics.html
 
+```
+rails g migration add_user_id_to_friends user_id:integer:index
+
+
+```
 
 https://youtu.be/fmyvWz5TUWg
 

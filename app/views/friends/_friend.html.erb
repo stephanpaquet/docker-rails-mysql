@@ -1,3 +1,4 @@
+<% if friend.user == current_user %>
 <div id="<%= dom_id friend %>">
   <p>
     <strong>First name:</strong>
@@ -24,4 +25,9 @@
     <%= friend.twitter %>
   </p>
 
+  <p>
+    <strong>User:</strong>
+    <%= friend.user.id %>
+  </p>
 </div>
+<% end %>
