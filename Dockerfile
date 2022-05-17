@@ -20,6 +20,9 @@ ADD Gemfile* $APP_HOME/
 
 RUN gem install bundler -v '~>2'
 
+RUN chmod 777 /usr/local/bundle/cache
+RUN chmod 777 /usr/local/bundle/gems
+
 RUN bundle install
 
 # Add a script to be executed every time the container starts.
