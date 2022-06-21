@@ -1,1 +1,3 @@
-https://towardsdatascience.com/how-to-dockerize-an-existing-ruby-on-rails-application-3eb6d16ec392
+# Docker Ruby on rails avec Mysql et phpMyAdmin
+
+Voir le document d'[installation](./INSTALLATION.md).
